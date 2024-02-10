@@ -50,5 +50,17 @@
     height: 25px;
     width: 30px;
     display:block;
+}
+.restorent-img{
+    object-fit: cover;
+    max-height: 300px;
+    overflow: hidden;
     
+}
+.food-image{
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }

@@ -14,8 +14,9 @@ const Header = () => {
           <FaCartShopping className="cart-icon" />
           <li className="cart-btn">
             {" "}
-            Your Cart <p className="cart-count">0</p>
+            Your Cart 
           </li>
+          <p className="cart-count">0</p>
         </ul>
       </header>
       <div className="restorent-img">

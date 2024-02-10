@@ -1,0 +1,29 @@
+.food-container {
+    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+
+.food-item {
+    background-color :  #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 40rem;
+}
+
+@media (max-width: 768px) {
+    .food-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .food-item {
+        width: 80%;
+    }
+}

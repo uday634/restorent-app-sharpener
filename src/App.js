@@ -1,14 +1,21 @@
 import React from "react";
 import Header from "./components/Header/Header";
 import Summary from "./components/Summary/Summary";
-import './App.css'
+import Meals from "./components/Meals/Meals";
 
 function App() {
+  let mealsArr = [
+    { item: "sushi", discription: "finset fish and veggies", price: 22.99 },
+    { item: "sushi", discription: "finset fish and veggies", price: 22.99 },
+    { item: "sushi", discription: "finset fish and veggies", price: 22.99 },
+    { item: "sushi", discription: "finset fish and veggies", price: 22.99 },
+  ];
   return (
-    <React.Fragment>
-      <Header />
+    <div id="root">
+      <Header className="Header" />
       <Summary className="Summary-card" />
-    </React.Fragment>
+      <Meals foodItems={mealsArr} />
+    </div>
   );
 }
 

@@ -21,6 +21,7 @@
     background-color: #350d02;
     height: 40px;
     width: 10rem;
+    cursor: pointer;
     border-radius: 50px;
     @media (max-width: 750px) {
         width: 8rem;

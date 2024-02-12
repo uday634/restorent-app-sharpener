@@ -5,6 +5,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    z-index: 99;
 }
 
 .logo {
@@ -80,8 +82,8 @@
 
 .food-image {
     object-fit: cover;
+    height: 20rem;
     width: 100%;
-    height: auto;
     display: block;
     margin: 0 auto;
 

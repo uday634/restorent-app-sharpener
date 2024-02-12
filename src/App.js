@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useContext } from "react";
 import Header from "./components/Header/Header";
 import Summary from "./components/Summary/Summary";
 import Meals from "./components/Meals/Meals";
 import Cart from "./components/Cart/Cart";
+import CartProvider from "./store/CartProvider";
 
 function App() {
     const [cartIsShown, setCartIsShown] = useState(false);
@@ -16,7 +17,6 @@ function App() {
 
   const showCartHandler = () => {
     setCartIsShown(true);
-    console.log('hi')
   }
 
   const hideCarthandler = () => {
@@ -24,12 +24,12 @@ function App() {
   }
 
   return (
-    <div id="root">
+    <CartProvider>
       {cartIsShown && <Cart  setCartState ={hideCarthandler} />}
       <Header setCartState ={showCartHandler} />
       <Summary className="Summary-card" />
       <Meals foodItems={mealsArr} />
-    </div>
+    </CartProvider>
   );
 }
 

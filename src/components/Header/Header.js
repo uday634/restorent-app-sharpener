@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { FaShoppingCart } from "react-icons/fa";
+import CartContext from "../../store/cart-context";
+import restaurantImage from "../../images/food.jpg";
 import "./Header.css";
-import { FaCartShopping } from "react-icons/fa6";
-import resturentImage from "../../images/food.jpg";
 
 const Header = (props) => {
+  const cartCtx = useContext(CartContext);
 
+  const numberOfCartItems = cartCtx.items.reduce((curNumber, item) => {
+    return curNumber + item.amount;
+  }, 0);
 
   return (
     <>
@@ -13,17 +18,15 @@ const Header = (props) => {
           ReactMeals
         </h3>
         <ul className="header-list" onClick={props.setCartState}>
-          <FaCartShopping className="cart-icon" />
-          <li className="cart-btn">
-            {" "}
-            Your Cart 
-          </li>
-          <p className="cart-count">0</p>
+          <FaShoppingCart className="cart-icon" />
+          <li className="cart-btn">Your Cart</li>
+          {numberOfCartItems > 0 && (
+            <p className="cart-count">{numberOfCartItems}</p>
+          )}
         </ul>
       </header>
-      <div className="restorent-img">
-        <img src={resturentImage} alt="food" className="food-image" />
-        
+      <div className="restaurant-img">
+        <img src={restaurantImage} alt="food" className="food-image" />
       </div>
     </>
   );

@@ -9,10 +9,10 @@ function App() {
     const [cartIsShown, setCartIsShown] = useState(false);
 
   let mealsArr = [
-    { item: "sushi", discription: "finset fish and veggies", price: 22.99, id: Math.floor(Math.random() * 1000) },
-    { item: "sushi", discription: "finset fish and veggies", price: 22.99, id: Math.floor(Math.random() * 1000) },
-    { item: "sushi", discription: "finset fish and veggies", price: 22.99, id: Math.floor(Math.random() * 1000) },
-    { item: "sushi", discription: "finset fish and veggies", price: 22.99, id: Math.floor(Math.random() * 1000) },
+    { item: "sushi", discription: "finset fish and veggies", price: 22.99, id: 1 },
+    { item: "Biryani", discription: "finset fish and veggies", price: 22.99, id: 2 },
+    { item: "ice cream", discription: "finset fish and veggies", price: 22.99, id: 3 },
+    { item: "Nodiles", discription: "finset fish and veggies", price: 22.99, id: 4 },
   ];
 
   const showCartHandler = () => {

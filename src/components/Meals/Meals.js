@@ -2,27 +2,31 @@ import React, { Fragment, useState, useContext } from "react";
 import CartContext from "../../store/cart-context";
 import "./Meals.css";
 
-const Meals = (props) => {
-  const [currentItemsCount, setCurrentItemsCount] = useState(0);
+const Meals = React.memo((props) => {
+  const [itemsCount, setItemsCount] = useState({});
   const cartCtx = useContext(CartContext);
 
   const addToCartHandler = (id, name, price) => {
-    setCurrentItemsCount((prevCount) => prevCount + 1);
+    setItemsCount((prevCounts) => ({
+      ...prevCounts,
+      [id]: (prevCounts[id] || 0) + 1,
+    }));
 
     cartCtx.addItem({
       id: id,
       name: name,
-      amount: 1, // Use currentItemsCount directly
+      amount:  1,
       price: price,
     });
   };
-  console.log(cartCtx.items)
+
+  console.log(cartCtx.items);
 
   return (
     <Fragment>
       <div className="food-container">
         {props.foodItems.map((item) => {
-          const itemCount = currentItemsCount;
+          const itemCount = itemsCount[item.id] || 0;
           return (
             <div className="food-item" key={item.id} id={item.id}>
               <div>
@@ -47,6 +51,6 @@ const Meals = (props) => {
       </div>
     </Fragment>
   );
-};
+});
 
 export default Meals;
